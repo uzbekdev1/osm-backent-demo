@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/assets/leaflet.css" />
+    <link rel="stylesheet" href="~/assets/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="~/assets/Control.Geocoder.css" />
+    <style>
+        #map {
+            width: 100%;
+            height: 60vh;
+        }
+    </style>
+}
+
+<div class="text-center">
+    <h1 class="display-4">OSM demo</h1>
+    <div id="map"></div>
+</div>
+
+
+@section Scripts
+{
+    <script src="~/assets/leaflet.js"></script>
+    <script src="~/assets/leaflet-routing-machine.js"></script>
+    <script src="~/assets/Control.Geocoder.js"></script>
+    <script>
+        $(function () {
+            var map = L.map('map', {
+                center: [41.2827706, 69.1392838],
+                zoom: 9
+            });
+            L.Icon.Default.imagePath = 'assets/';
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            var control = L.Routing.control({
+                router: L.Routing.osrmv1({
+                    serviceUrl: `http://localhost:5000/route/v1`,
+                    language: 'ru',
+                    profile: 'car'
+                }),
+                waypoints: [
+                    L.latLng(41.2827706, 69.1392838),
+                    L.latLng(40.0094381, 63.5492153)
+                ],
+                language: 'ru',
+                geocoder: L.Control.Geocoder.nominatim(),
+                routeWhileDragging: true,
+                reverseWaypoints: true,
+                showAlternatives: true,
+                lineOptions: {
+                    styles: [{ color: '#FF694E', weight: 5 }]
+                },
+                fitSelectedRoutes: true,
+                altLineOptions: {
+                    styles: [{ color: '#1576A3', weight: 5 }]
+                },
+                show: true
+            }).addTo(map);
+
+            L.Routing.errorControl(control).addTo(map);
+        });
+    </script>
+}

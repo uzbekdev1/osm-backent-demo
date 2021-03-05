@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OsmApp.Web", "OsmApp.Web\OsmApp.Web.csproj", "{A0DD8158-A30F-4830-904D-45698DDE54F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OsmApp.Artifacts", "OsmApp.Artifacts", "{DDD81E02-A0E4-41B5-93E0-ADDCC18C3525}"
+	ProjectSection(SolutionItems) = preProject
+		OsmApp.Artifacts\osrm_Release.zip = OsmApp.Artifacts\osrm_Release.zip
+		OsmApp.Artifacts\run.bat = OsmApp.Artifacts\run.bat
+		OsmApp.Artifacts\uzbekistan-latest-free.shp.zip = OsmApp.Artifacts\uzbekistan-latest-free.shp.zip
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0DD8158-A30F-4830-904D-45698DDE54F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DD8158-A30F-4830-904D-45698DDE54F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DD8158-A30F-4830-904D-45698DDE54F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DD8158-A30F-4830-904D-45698DDE54F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {226B6F77-AEE2-4E57-9589-3114BCCCC272}
+	EndGlobalSection
+EndGlobal
